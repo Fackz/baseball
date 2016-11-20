@@ -256,7 +256,7 @@ Daren Wilman and the rest of the MLBAM crew make pitch-by-pitch and Statcast dat
 `scrape_statcast_savant_batter`<br>
 `scrape_statcast_savant_pitcher`<br>
 
-The two `savant` functions allow a user to retrieve PITCHf/x and Statcast data for either a specific batter or pitcher from [Baseball Savants' Statcast Search] (https://baseballsavant.mlb.com/statcast_search). The user needs to provide a `start_date`, `end_date`, and the batter or pitcher's MLBAMID.
+The two `savant` functions allow a user to retrieve PITCHf/x and Statcast data for either a specific batter or pitcher from [Baseball Savants' Statcast Search](https://baseballsavant.mlb.com/statcast_search). The user needs to provide a `start_date`, `end_date`, and the batter or pitcher's MLBAMID.
 
 In this example, we are pulling data for Carlos Correa from 4/6 through 4/15/2016:
 
