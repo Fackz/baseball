@@ -8,7 +8,7 @@ subtitle:
 
 ###Standings
 
-For example, if you want to see the standings for a specific MLB division on a given date, you can use the `standings_on_date_bref()` function. Just pass the year, month, day, and division you want:
+You  can acquire the standings for any given date in MLB history using the `standings_on_date_bref()` function. Just pass the year, month, day, and division you want:
 
 ```R
 > standings_on_date_bref("2015-08-01", "NL East", from = FALSE)
@@ -20,6 +20,19 @@ $`NL East`
 4 MIA 42 62 0.404 13.0 370 408    0.455
 5 PHI 41 64 0.390 14.5 386 511    0.374
 ```
+
+If you want to see the standings from a particular date forward you can set the `from` parameter to `TRUE`:
+
+```R
+> standings_on_date_bref("2015-08-01", "NL East", from = TRUE)
+$`NL East`
+   Tm  W  L  W-L%   GB  RS  RA pythW-L%
+1 NYM 36 22 0.621   -- 315 240    0.622
+2 MIA 29 29 0.500  7.0 243 270    0.452
+3 WSN 29 31 0.483  8.0 281 244    0.564
+4 PHI 22 35 0.386 13.5 240 298    0.402
+5 ATL 21 37 0.362 15.0 194 311    0.297
+````
 
 ###Daily Player Performance
 
