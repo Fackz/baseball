@@ -108,15 +108,9 @@ The function works the same for pitchers:
 6 0.28 0.07 0.834 0.255 10.6 7.31   0.308    0.039      0
 ```
 
-<<<<<<< Updated upstream
 ### FanGraphs Guts and Park Factors 
 
 __Guts__
-=======
-### FanGraphs Guts and Park Factors
-
-#### Guts
->>>>>>> Stashed changes
 
 [FanGraphs](http://fangraphs.com) provides visitors with a table of many of the components and constants they use for calculating some metrics on the site, such as wOBA and FIP. 
 
@@ -139,11 +133,8 @@ The `fg_guts()` function will pull this table and format it as a data frame when
 5  9.544 3.095
 6  9.454 3.025
 ```
-<<<<<<< Updated upstream
+
 __Park Factors__
-=======
-#### Park Factors
->>>>>>> Stashed changes
 
 You can also obtain park factors from FanGraphs for every team and every season.
 
@@ -223,11 +214,7 @@ Example (batters):
 10  Ryan Vogelsong 285064          10      0.000      0.200       0.300        0.000 0.200       0.300
 ```
 
-<<<<<<< Updated upstream
 ### Team Schedule and Results
-=======
-### Team Schedule and Results 
->>>>>>> Stashed changes
 
 Sometimes it is helpful to have the game-to-game schedule and results for a given team. This can easily be acquired using the `team_results_bref()` function. You need to supply the team acronym used at [Baseball-Reference.com](http://www.baseball-reference.com) and the season you are interested in.
 
@@ -249,8 +236,4 @@ Here's an example looking at the 1927 Yankees (yes, their third game of the seas
 4 Pennock   Ehmke      2:27   D      16000      3
 5 Shocker Ruffing      2:05   D      25000      4
 6    Hoyt Russell      2:01   D      35000      5
-<<<<<<< Updated upstream
 ```
-=======
-```
->>>>>>> Stashed changes
