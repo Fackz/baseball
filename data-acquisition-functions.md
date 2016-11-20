@@ -32,7 +32,7 @@ $`NL East`
 3 WSN 29 31 0.483  8.0 281 244    0.564
 4 PHI 22 35 0.386 13.5 240 298    0.402
 5 ATL 21 37 0.362 15.0 194 311    0.297
-````
+```
 
 The function can also generate standings across an entire league (AL or NL) by including "Overall" in the division paramater:
 
