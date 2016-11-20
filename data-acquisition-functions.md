@@ -140,8 +140,7 @@ You can also obtain park factors from FanGraphs for every team and every season.
 
 For overall park factors, use the `fg_park()` function, supplying the year you are interested in:
 
-```R
-> head(fg_park(1986))
+```R> head(fg_park(1986))
   season home_team basic single double triple  hr  so UIBB GB FB LD IFFB FIP
 1   1986    Angels    98     99     92     81 105 100   99 NA NA NA   NA 101
 2   1986   Orioles    98     99     97     75 103 102  102 NA NA NA   NA 101
@@ -172,8 +171,80 @@ For park factors by batter handedness, use the `fg_park_hand()` function. Note t
 
 ### Leaderboards
 
+[FanGraphs](http://fangraphs.com) has a great inteface for generating leaderboards. Currently, `baseballr` includes a function for acquiring leaderboards for batters (pitchers coming soon) using the `fg_bat_leaders()` function.
 
+There are a few parameters you need to input:
 
+`x`: first year of statistics to be included.
+`y`: last year of statistics to be included. If you want a single year, just set `y` the same as `x`.
+`league`: you can get records for all of MLB (`all`), the National Leagye (`nl`), or the American League (`al`).
+`qual`: whether to include only batters that were qualified. Defaults to `y`. Alternatively, you can pass a minimum number of plate appearances to restrict the data to.
+`ind`: whether to split the data by batter and individual season, or to simply aggregate by batter across the seasons selected. Defaults to aggregating (`ind = 0`). To spliy by season, use `ind = 1`.
+
+The leaderboards will include all available metrics that FanGraph's produces.
+
+Here's a truncated example for 2015 through 2016:
+
+```R
+> head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = "y", ind = 0)) %>%
++     select(Seasons:AVG)
+    Seasons #             Name         Team Age   G   AB   PA   H  1B 2B 3B HR   R RBI  BB IBB
+1 2015-2016 1       Joey Votto         Reds  32 316 1101 1372 352 223 67  4 58 196 177 251  30
+2 2015-2016 2       Mike Trout       Angels  24 318 1124 1363 345 200 64 11 70 227 190 208  26
+3 2015-2016 3   Miguel Cabrera       Tigers  32 277 1024 1190 333 216 59  2 56 156 184 152  30
+4 2015-2016 4     Bryce Harper    Nationals  22 300 1027 1281 295 164 62  3 66 202 185 232  35
+5 2015-2016 5   Josh Donaldson    Blue Jays  30 313 1197 1411 348 190 73  7 78 244 222 182   6
+6 2015-2016 6 Paul Goldschmidt Diamondbacks  28 317 1146 1400 354 221 71  5 57 209 205 228  44
+   SO HBP SF SH GDP SB CS   AVG
+1 255  10 10  0  27 19  4 0.320
+2 295  21 10  0  16 41 14 0.307
+3 198   7  7  0  45  1  1 0.325
+4 248   8 14  0  26 27 14 0.287
+5 252  15 13  4  32 13  1 0.291
+6 301   9 15  0  30 53 10 0.309
+```
+
+And here's the same query, but this time splitting the seasons individually:
+
+```R
+> head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = "y", ind = 1)) %>%
++     select(Season:AVG)
+  Season             Name         Team Age   G  AB  PA   H  1B 2B 3B HR   R RBI  BB IBB  SO
+1   2015     Bryce Harper    Nationals  22 153 521 654 172  91 38  1 42 118  99 124  15 131
+2   2015       Joey Votto         Reds  31 158 545 695 171 107 33  2 29  95  80 143  15 135
+3   2016      David Ortiz      Red Sox  40 151 537 626 169  82 48  1 38  79 127  80  15  86
+4   2016       Mike Trout       Angels  24 159 549 681 173 107 32  5 29 123 100 116  12 137
+5   2015 Paul Goldschmidt Diamondbacks  27 159 567 695 182 109 38  2 33 103 110 118  29 151
+6   2015       Mike Trout       Angels  23 159 575 682 172  93 32  6 41 104  90  92  14 158
+  HBP SF SH GDP SB CS   AVG
+1   5  4  0  15  6  4 0.330
+2   5  2  0  11 11  3 0.314
+3   2  7  0  22  2  0 0.315
+4  11  5  0   5 30  7 0.315
+5   2  7  0  16 21  5 0.321
+6  10  5  0  11 11  7 0.299
+```
+
+We can also take our original query and limit it only to batters with at least 1200 plate appearances (`qual = 1200`):
+
+```R
+> head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = 1200, ind = 0)) %>%
++     select(Seasons:AVG)
+    Seasons #             Name         Team Age   G   AB   PA   H  1B 2B 3B HR   R RBI  BB IBB
+1 2015-2016 1       Joey Votto         Reds  32 316 1101 1372 352 223 67  4 58 196 177 251  30
+2 2015-2016 2       Mike Trout       Angels  24 318 1124 1363 345 200 64 11 70 227 190 208  26
+3 2015-2016 3     Bryce Harper    Nationals  22 300 1027 1281 295 164 62  3 66 202 185 232  35
+4 2015-2016 4   Josh Donaldson    Blue Jays  30 313 1197 1411 348 190 73  7 78 244 222 182   6
+5 2015-2016 5 Paul Goldschmidt Diamondbacks  28 317 1146 1400 354 221 71  5 57 209 205 228  44
+6 2015-2016 6      David Ortiz      Red Sox  40 297 1065 1240 313 152 85  1 75 152 235 157  31
+   SO HBP SF SH GDP SB CS   AVG
+1 255  10 10  0  27 19  4 0.320
+2 295  21 10  0  16 41 14 0.307
+3 248   8 14  0  26 27 14 0.287
+4 252  15 13  4  32 13  1 0.291
+5 301   9 15  0  30 53 10 0.309
+6 181   2 16  0  38  2  1 0.294
+```
 
 ### Statcast
 
