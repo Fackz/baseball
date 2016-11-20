@@ -145,4 +145,4 @@ Example (batters):
 10  Ryan Vogelsong 285064          10      0.000      0.200       0.300        0.000 0.200       0.300
 ```
 
-More functionality will be added soon. Please leave any suggestions or bugs in the [Issues section](https://github.com/BillPetti/baseballr/issues).
+More functionality will be added soon. Please leave any suggestions or bugs [here](https://github.com/BillPetti/baseballr/issues).
