@@ -23,6 +23,7 @@ description: A webpage dedicated to the baseballr package for R
 
 # List of links in the navigation bar
 navbar-links:
+  About Me: "aboutme"
   Baseball Tools: 
     - baseballr package GitHub page: "https://github.com/BillPetti/baseballr"
     - Interactive Spray Chart Tool: "https://public.tableau.com/profile/billpetti#!/vizhome/SprayChartComparison/About"
