@@ -1,3 +1,9 @@
+---
+layout: page
+title: About
+subtitle: 
+---
+
 # baseballr 0.2.1 <br>
 **(latest version released 2016-10-08)**
 
