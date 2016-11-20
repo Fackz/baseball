@@ -291,6 +291,8 @@ Here is an example where the user is looking for players with the last name "Sea
 4       Kyle    Seager  Kyle Duerr                             1987             2011   572122      seagk001 seageky01         9785
 ```
 
+As you can see, the table is extremely helpful as it also provides a crosswalk between a player's IDs from Retrosheet, Baseball-Reference, and FanGraphs along with MLBAM.
+
 The file is quite large and so can take a while to return a result. So, after the first time you run the function the entire table will be added to your Global environment. This will cut down on the time of subsequent queries considerably.
 
 The `edge_scrape()` function allows the user to scrape PITCHf/x data from the GameDay application using Carson Sievert's [pitchRx](https://github.com/cpsievert/pitchRx) package and to calculate metrics associated with [Edge%](https://billpetti.shinyapps.io/edge_shiny/). The function returns a dataframe grouped by either pitchers or batters and the percentge of pitches in each of the various Edge zones.
