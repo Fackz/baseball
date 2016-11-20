@@ -140,7 +140,8 @@ You can also obtain park factors from FanGraphs for every team and every season.
 
 For overall park factors, use the `fg_park()` function, supplying the year you are interested in:
 
-```R> head(fg_park(1986))
+```R
+> head(fg_park(1986))
   season home_team basic single double triple  hr  so UIBB GB FB LD IFFB FIP
 1   1986    Angels    98     99     92     81 105 100   99 NA NA NA   NA 101
 2   1986   Orioles    98     99     97     75 103 102  102 NA NA NA   NA 101
