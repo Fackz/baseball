@@ -10,7 +10,7 @@ subtitle:
 
 You  can acquire the standings for any given date in MLB history from [Baseball-Reference.com](http://www.baseball-reference.com) using the `standings_on_date_bref()` function. Just pass the year, month, day, and division you want:
 
-```R
+```r
 > standings_on_date_bref(date = "2015-08-01", division = "NL East", from = FALSE)
 $`NL East`
    Tm  W  L  W-L%   GB  RS  RA pythW-L%
@@ -23,7 +23,7 @@ $`NL East`
 
 If you want to see the standings from a particular date forward you can set the `from` parameter to `TRUE`:
 
-```R
+```r
 > standings_on_date_bref(date = "2015-08-01", division = "NL East", from = TRUE)
 $`NL East`
    Tm  W  L  W-L%   GB  RS  RA pythW-L%
@@ -36,7 +36,7 @@ $`NL East`
 
 The function can also generate standings across an entire league (AL or NL) by including "Overall" in the division paramater:
 
-```R
+```r
 > standings_on_date_bref(date = "2015-08-01", division = "NL Overall", from = TRUE)
 $`NL Overall`
     Tm  W  L  W-L%   GB  RS  RA pythW-L%
@@ -63,7 +63,7 @@ You can also pull data for all hitters or pitchers over a specific date range fr
 
 Here are the results for all hitters from August 1st through October 3rd during the 2015 season:
 
-```R
+```r
 > head(daily_batter_bref(t1 = "2015-08-01", t2 = "2015-10-03"))
   season             Name Age  Level          Team  G  PA  AB  R  H X1B X2B X3B
 1   2015    Manny Machado  22 MLB-AL     Baltimore 59 266 237 36 66  43  10   0
@@ -83,7 +83,7 @@ Here are the results for all hitters from August 1st through October 3rd during 
 
 The function works the same for pitchers:
 
-```R
+```r
 > head(daily_pitcher_bref(t1 = "2015-08-01", t2 = "2015-10-03"))
   season              Name Age  Level          Team  G GS  W  L SV   IP  H  R ER uBB
 1   2015   Clayton Kershaw  27 MLB-NL   Los Angeles 12 12  8  1 NA 89.0 56 17 16  15
@@ -116,7 +116,7 @@ __Guts__
 
 The `fg_guts()` function will pull this table and format it as a data frame when called (there are no paramters needed):
 
-```R
+```r
 > head(fg_guts())
   season lg_woba woba_scale   wBB  wHBP   w1B   w2B   w3B   wHR runSB  runCS lg_r_pa
 1   2016   0.318      1.212 0.691 0.721 0.878 1.242 1.569 2.015   0.2 -0.410   0.118
@@ -140,7 +140,7 @@ You can also obtain park factors from FanGraphs for every team and every season.
 
 For overall park factors, use the `fg_park()` function, supplying the year you are interested in:
 
-```R
+```r
 > head(fg_park(1986))
   season home_team basic single double triple  hr  so UIBB GB FB LD IFFB FIP
 1   1986    Angels    98     99     92     81 105 100   99 NA NA NA   NA 101
@@ -152,7 +152,7 @@ For overall park factors, use the `fg_park()` function, supplying the year you a
 ```
 For park factors by batter handedness, use the `fg_park_hand()` function. Note that handedness park factors are only available going back to the 2002 season:
 
-```R
+```r
 > head(fg_park_hand(2012))
   season home_team single_as_LHH single_as_RHH double_as_LHH double_as_RHH
 1   2012    Angels            99           100            95            96
@@ -186,7 +186,7 @@ The leaderboards will include all available metrics that FanGraph's produces.
 
 Here's a truncated example for 2015 through 2016:
 
-```R
+```r
 > head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = "y", ind = 0)) %>%
 +     select(Seasons:AVG)
     Seasons #             Name         Team Age   G   AB   PA   H  1B 2B 3B HR   R RBI  BB IBB
@@ -207,7 +207,7 @@ Here's a truncated example for 2015 through 2016:
 
 And here's the same query, but this time splitting the seasons individually:
 
-```R
+```r
 > head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = "y", ind = 1)) %>%
 +     select(Season:AVG)
   Season             Name         Team Age   G  AB  PA   H  1B 2B 3B HR   R RBI  BB IBB  SO
@@ -228,7 +228,7 @@ And here's the same query, but this time splitting the seasons individually:
 
 We can also take our original query and limit it only to batters with at least 1200 plate appearances (`qual = 1200`):
 
-```R
+```r
 > head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = 1200, ind = 0)) %>%
 +     select(Seasons:AVG)
     Seasons #             Name         Team Age   G   AB   PA   H  1B 2B 3B HR   R RBI  BB IBB
@@ -247,7 +247,51 @@ We can also take our original query and limit it only to batters with at least 1
 6 181   2 16  0  38  2  1 0.294
 ```
 
-### Statcast
+### Statcast and PITCHf/x
+
+Daren Wilman and the rest of the MLBAM crew make pitch-by-pitch and Statcast data available on the [Baseball Savant](https://baseballsavant.mlb.com) site.
+
+`baseballr` contains two functions for acquiring this data directly into `R`:
+
+`scrape_statcast_savant_batter`<br>
+`scrape_statcast_savant_pitcher`<br>
+
+The two `savant` functions allow a user to retrieve PITCHf/x and Statcast data for either a specific batter or pitcher from [Baseball Savants' Statcast Search] (https://baseballsavant.mlb.com/statcast_search). The user needs to provide a `start_date`, `end_date`, and the batter or pitcher's MLBAMID.
+
+In this example, we are pulling data for Carlos Correa from 4/6 through 4/15/2016:
+
+```r
+> scrape_statcast_savant_batter(start_date = "2016-04-06", end_date = "2016-04-15", batterid = 621043) %>% 
+     filter(type == "X") %>%
+     select(3,7,54:56) %>%
+     tail()
+[1] "Be patient, this may take a few seconds..."
+[1] "Data courtesy of Baseball Savant and MLBAM  (baseballsavant.mlb.com)"     
+    game_date   player_name hit_distance_sc hit_speed hit_angle
+26 2016-04-07 Carlos Correa             385    103.33     31.10
+27 2016-04-07 Carlos Correa             288     87.25     27.77
+28 2016-04-06 Carlos Correa             392    103.97     29.62
+29 2016-04-06 Carlos Correa             189    105.20      0.11
+30 2016-04-06 Carlos Correa             462    113.55     23.76
+31 2016-04-06 Carlos Correa             228    113.39     -2.18
+```
+
+Since the savant functions require users to pass a valid MLBAMID, a lookup function is included that leverages the [Chadwich Bureau Register](https://github.com/chadwickbureau/register). Users provide a text string and only those players with that string present in their last name will be returned.
+
+Here is an example where the user is looking for players with the last name "Seager":
+
+```r
+> playerid_lookup("Seager")
+[1] "Be patient, this may take a few seconds..."
+[1] "Data courtesy of the Chadwick Bureau Register (https://github.com/chadwickbureau/register)"
+  first_name last_name  given_name name_suffix nick_name birth_year mlb_played_first mlbam_id retrosheet_id  bbref_id fangraphs_id
+1        Ben    Seager         Ben                               NA               NA       NA                                   NA
+2      Corey    Seager  Corey Drew                             1994             2015   608369      seagc001 seageco01        13624
+3     Justin    Seager Justin Ryan                             1992               NA   643529                                   NA
+4       Kyle    Seager  Kyle Duerr                             1987             2011   572122      seagk001 seageky01         9785
+```
+
+The file is quite large and so can take a while to return a result. So, after the first time you run the function the entire table will be added to your Global environment. This will cut down on the time of subsequent queries considerably.
 
 The `edge_scrape()` function allows the user to scrape PITCHf/x data from the GameDay application using Carson Sievert's [pitchRx](https://github.com/cpsievert/pitchRx) package and to calculate metrics associated with [Edge%](https://billpetti.shinyapps.io/edge_shiny/). The function returns a dataframe grouped by either pitchers or batters and the percentge of pitches in each of the various Edge zones.
 
@@ -293,7 +337,7 @@ Sometimes it is helpful to have the game-to-game schedule and results for a give
 
 Here's an example looking at the 1927 Yankees (yes, their third game of the season ended in a tie--odd, I know):
 
-```R
+```r
 > head(team_results_bref("NYY", 1927))
   Year Rk Gm#              Date  Tm H_A Opp Result  R RA Inn Record Rank     GB
 1 1927  1   1   Tuesday, Apr 12 NYY   H PHA      W  8  3  NA    1-0    1   Tied
