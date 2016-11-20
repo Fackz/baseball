@@ -110,7 +110,7 @@ The function works the same for pitchers:
 
 ### FanGraphs Guts and Park Factors 
 
-*Guts*
+__Guts__
 
 [FanGraphs](http://fangraphs.com) provides visitors with a table of many of the components and constants they use for calculating some metrics on the site, such as wOBA and FIP. 
 
@@ -133,7 +133,7 @@ The `fg_guts()` function will pull this table and format it as a data frame when
 5  9.544 3.095
 6  9.454 3.025
 ```
-*Park Factors*
+__Park Factors__
 
 You can also obtain park factors from FanGraphs for every team and every season.
 
