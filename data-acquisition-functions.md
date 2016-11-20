@@ -108,7 +108,7 @@ The function works the same for pitchers:
 6 0.28 0.07 0.834 0.255 10.6 7.31   0.308    0.039      0
 ```
 
-### FanGraphs Guts and Park Factors
+### FanGraphs Guts and Park Factors 
 
 #### Guts
 
