@@ -6,7 +6,7 @@ subtitle:
 
 `baseballr` comes with a number of functions that help with acquiring data from various sources.
 
-###Standings
+### Standings
 
 You  can acquire the standings for any given date in MLB history from [Baseball-Reference.com](http://www.baseball-reference.com) using the `standings_on_date_bref()` function. Just pass the year, month, day, and division you want:
 
@@ -57,7 +57,7 @@ $`NL Overall`
 15 CIN 17 43 0.283 24.5 227 302    0.372
 ```
 
-###Daily Player Performance
+### Daily Player Performance
 
 You can also pull data for all hitters or pitchers over a specific date range from [Baseball-Reference.com](http://www.baseball-reference.com) using the `daily` functions. There are two parameters: t1 is the start date and t2 is the end date.
 
@@ -108,9 +108,9 @@ The function works the same for pitchers:
 6 0.28 0.07 0.834 0.255 10.6 7.31   0.308    0.039      0
 ```
 
-###FanGraphs Guts and Park Factors
+### FanGraphs Guts and Park Factors
 
-####Guts
+#### Guts
 
 [FanGraphs](http://fangraphs.com) provides visitors with a table of many of the components and constants they use for calculating some metrics on the site, such as wOBA and FIP. 
 
@@ -133,7 +133,7 @@ The `fg_guts()` function will pull this table and format it as a data frame when
 5  9.544 3.095
 6  9.454 3.025
 ```
-####Park Factors
+#### Park Factors
 
 You can also obtain park factors from FanGraphs for every team and every season.
 
@@ -168,12 +168,12 @@ For park factors by batter handedness, use the `fg_park_hand()` function. Note t
 6           122           126       100       100
 ```
 
-###Leaderboards
+### Leaderboards
 
 
 
 
-###Statcast
+### Statcast
 
 The `edge_scrape()` function allows the user to scrape PITCHf/x data from the GameDay application using Carson Sievert's [pitchRx](https://github.com/cpsievert/pitchRx) package and to calculate metrics associated with [Edge%](https://billpetti.shinyapps.io/edge_shiny/). The function returns a dataframe grouped by either pitchers or batters and the percentge of pitches in each of the various Edge zones.
 
@@ -213,7 +213,7 @@ Example (batters):
 10  Ryan Vogelsong 285064          10      0.000      0.200       0.300        0.000 0.200       0.300
 ```
 
-###Team Schedule and Results
+### Team Schedule and Results
 
 Sometimes it is helpful to have the game-to-game schedule and results for a given team. This can easily be acquired using the `team_results_bref()` function. You need to supply the team acronym used at [Baseball-Reference.com](http://www.baseball-reference.com) and the season you are interested in.
 
