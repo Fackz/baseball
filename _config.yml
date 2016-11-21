@@ -24,6 +24,10 @@ description: A webpage dedicated to the baseballr package for R
 # List of links in the navigation bar
 navbar-links:
   My Homepage: "https://billpetti.github.io"
+  baseballr Shortcuts:
+    - About: "http://billpetti.github.io/baseballr/about/"
+    - Data Acquisition Functions: "http://billpetti.github.io/baseballr/data-acquisition-functions/"
+    - Metric Coding and Calculation: "Metric Coding and Calculation"
   Baseball Tools: 
     - baseballr package GitHub page: "https://github.com/BillPetti/baseballr"
     - Interactive Spray Chart Tool: "https://public.tableau.com/profile/billpetti#!/vizhome/SprayChartComparison/About"
