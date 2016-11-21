@@ -29,7 +29,7 @@ navbar-links:
     - Data Acquisition Functions: "http://billpetti.github.io/baseballr/data-acquisition-functions/"
     - Metric Coding and Calculation: "Metric Coding and Calculation"
   Baseball Tools: 
-    - baseballr package GitHub page: "https://github.com/BillPetti/baseballr"
+    - baseballr package GitHub page: "https://billpetti.github.io/baseballr/"
     - Interactive Spray Chart Tool: "https://public.tableau.com/profile/billpetti#!/vizhome/SprayChartComparison/About"
     - Edge% Shiny App: "https://billpetti.shinyapps.io/edge_shiny/"
 
