@@ -132,7 +132,7 @@ You can also take the data you've coded and calculate Edge% frequency using `edg
 
 ### Statcast
 
-The research team at Major League Baseball Advanced Media have developed a way to categorize batted balls that on average having a batting average over .500 and slugging over 1.500. The specific coding criteria can be found in comment #2 [here] (http://tangotiger.com/index.php/site/comments/statcast-lab-barrels#2). 
+The research team at Major League Baseball Advanced Media have developed a way to categorize batted balls that on average having a batting average over .500 and slugging over 1.500. The specific coding criteria can be found in comment #2 [here](http://tangotiger.com/index.php/site/comments/statcast-lab-barrels#2). 
 
 Now, whenver a user scrapes Statcast data using either the `scrape_statcast_savant_batter` or `scrape_statcast_savant_pitcher` functions the results will include a column `barrel`, where if the batted ball matches the barrel criteria it will code as 1, otherwise 0.
 
