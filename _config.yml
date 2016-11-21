@@ -27,7 +27,7 @@ navbar-links:
   baseballr Shortcuts:
     - About: "http://billpetti.github.io/baseballr/about/"
     - Data Acquisition Functions: "http://billpetti.github.io/baseballr/data-acquisition-functions/"
-    - Metric Coding and Calculation: "Metric Coding and Calculation"
+    - Metric Coding and Calculation: "http://billpetti.github.io/baseballr/metric-coding-calculation/"
   Baseball Tools: 
     - baseballr package GitHub page: "https://billpetti.github.io/baseballr/"
     - Interactive Spray Chart Tool: "https://public.tableau.com/profile/billpetti#!/vizhome/SprayChartComparison/About"
