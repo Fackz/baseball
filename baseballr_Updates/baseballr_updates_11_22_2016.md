@@ -1,6 +1,6 @@
 ---
 layout: page
-title: baseballr 0.3.1 is out with new NCAA functions
+title: Updated for baseballr 0.3.1
 tags: rstats, web-scraping, baseballr, NCAA
 ---
 
