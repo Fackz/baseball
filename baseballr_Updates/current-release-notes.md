@@ -6,6 +6,8 @@ tags: rstats, web-scraping, baseballr, NCAA
 
 ##  November 22, 2016
 
+_(Previous release notes can be found [here](https://github.com/BillPetti/baseballr/tree/master/baseballr_Updates))_
+
 The latest release of the [`baseballr`](https://billpetti.github.io/baseballr/) (0.3.1) includes a function for acquiring player statistics from the [NCAA's website](http://stats.ncaa.org) for baseball teams across the three major divisions (I, II, III).
 
 The function, `ncaa_scrape`, requires the user to pass values for three parameters for the function to work:
