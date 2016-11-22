@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Update Notes for baseballr 0.2.1
-tags: rstats, web-scraping, baseballr, NCAA
+tags: rstats, baseballr
 ---
+
 ### October 8, 2016
 
 Updates to functions in this release:
