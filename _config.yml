@@ -26,6 +26,7 @@ navbar-links:
   My Homepage: "https://billpetti.github.io"
   baseballr Shortcuts:
     - About: "http://billpetti.github.io/baseballr/about/"
+    - Current Release Notes: "http://billpetti.github.io/baseballr/baseballr_Updates/current-release-notes/"
     - Data Acquisition Functions: "http://billpetti.github.io/baseballr/data-acquisition-functions/"
     - Metric Coding and Calculation: "http://billpetti.github.io/baseballr/metric-coding-calculation/"
   Baseball Tools: 
