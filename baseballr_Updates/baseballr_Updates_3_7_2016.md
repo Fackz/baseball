@@ -1,4 +1,9 @@
-## Update Notes for baseballr package: Version 0.1.2 
+---
+layout: page
+title: Update Notes for baseballr 0.1.2
+tags: rstats, baseballr
+---
+
 ### March 7, 2016
 
 Functions added to this release:
