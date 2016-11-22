@@ -91,7 +91,7 @@ share-links-active:
 #disqus: ""
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-10302451-4"
 
 # Facebook App ID
 # fb_app_id: ""
