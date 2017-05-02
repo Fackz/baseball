@@ -4,8 +4,8 @@ title: About
 subtitle: 
 ---
 
-# baseballr 0.2.1 <br>
-**(latest version released 2016-10-08)**
+# baseballr 0.3.1 <br>
+**(latest version released 2016-11-22)**
 
 `baseballr` is a package written for R focused on baseball analysis. It includes functions for scraping various data from websites, such as FanGraphs.com and Baseball-Reference.com. It also includes functions for calculating metrics, such as wOBA, FIP, and team-level consistency over custom time frames.
 
@@ -145,4 +145,4 @@ Example (batters):
 10  Ryan Vogelsong 285064          10      0.000      0.200       0.300        0.000 0.200       0.300
 ```
 
-More functionality will be added soon. Please leave any suggestions or bugs [here](https://github.com/BillPetti/baseballr/issues).
+More functionality will be added soon. Please leave any suggestions or bugs in the [Issues section](https://github.com/BillPetti/baseballr/issues).
