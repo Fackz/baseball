@@ -12,9 +12,10 @@ Previous functions `scrape_statcast_savant_batter` and `scrape_statcast_savant_p
 
 Two new functions have been added, `scrape_statcast_savant_batter_all` and `scrape_statcast_savant_pitcher_all`, that allow a user to acquire data for either all pitchers or all hitters over a given time frame.
 
-Both functions take only two arguments:
+Both functions take only two arguments:  
 
 `start_date`: the first date for which the user wants records returned  
+
 `end_date`: the final date for which the user wants records returned  
 
 Remember, baseballsavant.com's csv download option allows for about 50,000 records in a single query. That works out to roughly 10-12 days of games. Longer time frames will take longer to download.
