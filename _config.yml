@@ -31,7 +31,7 @@ navbar-links:
     - Metric Coding and Calculation: "http://billpetti.github.io/baseballr/metric-coding-calculation/"
   Baseball Tools: 
     - baseballr package GitHub page: "https://billpetti.github.io/baseballr/"
-    - Interactive Spray Chart Tool: "https://public.tableau.com/profile/billpetti#!/vizhome/SprayChartComparison/About"
+    - Interactive Spray Chart Tool: "https://billpetti.shinyapps.io/shiny_spraychart"
     - Edge% Shiny App: "https://billpetti.shinyapps.io/edge_shiny/"
 
 # Image to show in the navigation bar - image must be a square (width = height)
