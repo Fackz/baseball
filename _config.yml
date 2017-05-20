@@ -23,7 +23,7 @@ description: A webpage dedicated to the baseballr package for R
 
 # List of links in the navigation bar
 navbar-links:
-  My Homepage: "https://billpetti.github.io"
+  Personal Homepage: "https://billpetti.github.io"
   baseballr Shortcuts:
     - About: "http://billpetti.github.io/baseballr/about/"
     - Current Release Notes: "http://billpetti.github.io/baseballr/baseballr_Updates/current-release-notes/"
