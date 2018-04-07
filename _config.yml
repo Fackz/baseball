@@ -28,6 +28,7 @@ navbar-links:
     - About: "http://billpetti.github.io/baseballr/about/"
     - Current Release Notes: "http://billpetti.github.io/baseballr/baseballr_Updates/current-release-notes/"
     - Data Acquisition Functions: "http://billpetti.github.io/baseballr/data-acquisition-functions/"
+    - Data Visualization Functions: "http://billpetti.github.io/baseballr/data-visualization-functions/"
     - Metric Coding and Calculation: "http://billpetti.github.io/baseballr/metric-coding-calculation/"
   Baseball Tools: 
     - Baseball Tools Home: "https://billpetti.github.io/baseball_tools_home/"
