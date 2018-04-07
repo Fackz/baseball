@@ -108,6 +108,33 @@ The function works the same for pitchers:
 6 0.28 0.07 0.834 0.255 10.6 7.31   0.308    0.039      0
 ```
 
+Game logs are also available via FanGraphs and these two functions:
+
+- `batter_game_logs_fg`
+- `pitcher_game_logs_fg`  
+
+Both functions has two arguments:  `player_id` and `year`. Both will return detailed game logs from FanGraphs for the selected season.
+
+```r
+> batter_game_logs_fg(playerid = 10155, year = 2018)
+        Date Team  Opp BO Pos PA H X2B X3B HR R RBI SB CS BB_perc K_perc  ISO
+1 2018-04-04  LAA  CLE  2  CF  5 0   0   0  0 0   0  0  0    0.40  0.200 .000
+2 2018-04-03  LAA  CLE  2  CF  5 1   0   0  1 1   1  0  0    0.20  0.000 .750
+3 2018-04-02  LAA  CLE  2  CF  4 0   0   0  0 0   0  0  0    0.25  0.250 .000
+4 2018-04-01  LAA @OAK  2  CF  5 2   1   0  0 1   1  0  0    0.00  0.000 .200
+5 2018-03-31  LAA @OAK  2  CF  5 3   2   0  0 2   2  1  0    0.00  0.200 .400
+6 2018-03-30  LAA @OAK  2  CF  4 1   0   0  1 2   1  0  0    0.00  0.000 .750
+7 2018-03-29  LAA @OAK  2  CF  6 0   0   0  0 0   0  0  0    0.00  0.167 .000
+  BABIP  AVG  OBP   SLG wOBA wRC_plus
+1  .000 .000 .400  .000 .276       78
+2  .000 .250 .400 1.000 .559      280
+3  .000 .000 .250  .000 .172        5
+4  .400 .400 .400  .600 .432      190
+5  .750 .600 .600 1.000 .686      371
+6  .000 .250 .250 1.000 .526      257
+7  .000 .000 .000  .000 .000     -100
+```
+
 ### FanGraphs Guts and Park Factors 
 
 __Guts__
@@ -333,20 +360,65 @@ Just pass a string to the function and it will return possible matches based on 
 
 
 
+=======
+>>>>>>> Stashed changes
 
+```R
+> head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = "y", ind = 1)) %>%
++     select(Season:AVG)
+  Season             Name         Team Age   G  AB  PA   H  1B 2B 3B HR   R RBI  BB IBB  SO
+1   2015     Bryce Harper    Nationals  22 153 521 654 172  91 38  1 42 118  99 124  15 131
+2   2015       Joey Votto         Reds  31 158 545 695 171 107 33  2 29  95  80 143  15 135
+3   2016      David Ortiz      Red Sox  40 151 537 626 169  82 48  1 38  79 127  80  15  86
+4   2016       Mike Trout       Angels  24 159 549 681 173 107 32  5 29 123 100 116  12 137
+5   2015 Paul Goldschmidt Diamondbacks  27 159 567 695 182 109 38  2 33 103 110 118  29 151
+6   2015       Mike Trout       Angels  23 159 575 682 172  93 32  6 41 104  90  92  14 158
+  HBP SF SH GDP SB CS   AVG
+1   5  4  0  15  6  4 0.330
+2   5  2  0  11 11  3 0.314
+3   2  7  0  22  2  0 0.315
+4  11  5  0   5 30  7 0.315
+5   2  7  0  16 21  5 0.321
+6  10  5  0  11 11  7 0.299
+```
 
+We can also take our original query and limit it only to batters with at least 1200 plate appearances (`qual = 1200`):
+
+```R
+> head(fg_bat_leaders(x = 2015, y = 2016, league = "all", qual = 1200, ind = 0)) %>%
++     select(Seasons:AVG)
+    Seasons #             Name         Team Age   G   AB   PA   H  1B 2B 3B HR   R RBI  BB IBB
+1 2015-2016 1       Joey Votto         Reds  32 316 1101 1372 352 223 67  4 58 196 177 251  30
+2 2015-2016 2       Mike Trout       Angels  24 318 1124 1363 345 200 64 11 70 227 190 208  26
+3 2015-2016 3     Bryce Harper    Nationals  22 300 1027 1281 295 164 62  3 66 202 185 232  35
+4 2015-2016 4   Josh Donaldson    Blue Jays  30 313 1197 1411 348 190 73  7 78 244 222 182   6
+5 2015-2016 5 Paul Goldschmidt Diamondbacks  28 317 1146 1400 354 221 71  5 57 209 205 228  44
+6 2015-2016 6      David Ortiz      Red Sox  40 297 1065 1240 313 152 85  1 75 152 235 157  31
+   SO HBP SF SH GDP SB CS   AVG
+1 255  10 10  0  27 19  4 0.320
+2 295  21 10  0  16 41 14 0.307
+3 248   8 14  0  26 27 14 0.287
+4 252  15 13  4  32 13  1 0.291
+5 301   9 15  0  30 53 10 0.309
+6 181   2 16  0  38  2  1 0.294
+```
 
 
 ### Statcast and PITCHf/x
 
 Daren Wilman and the rest of the MLBAM crew make pitch-by-pitch and Statcast data available on the [Baseball Savant](https://baseballsavant.mlb.com) site.
 
-`baseballr` contains two functions for acquiring this data directly into `R`:
+`baseballr` contains five functions for acquiring this data directly into `R`:
 
+`scrape_statcast_savant`<br>
 `scrape_statcast_savant_batter`<br>
+`scrape_statcast_savant_batter_all`<br>
 `scrape_statcast_savant_pitcher`<br>
+`scrape_statcast_savant_pitcher_all`<br>
 
-The two `savant` functions allow a user to retrieve PITCHf/x and Statcast data for either a specific batter or pitcher from [Baseball Savants' Statcast Search](https://baseballsavant.mlb.com/statcast_search). The user needs to provide a `start_date`, `end_date`, and the batter or pitcher's MLBAMID.
+*Note: the last four will likely be deprecated, as the first function allows users to query data in just about every way you'd want to in terms of single player, multiple players, pitchers, batters, etc.*
+
+The pitcher/batter `savant` functions allow a user to retrieve PITCHf/x and Statcast data for either a specific batter or pitcher from [Baseball Savants' Statcast Search](https://baseballsavant.mlb.com/statcast_search). The user needs to provide a `start_date`, `end_date`, and the batter or pitcher's MLBAMID.
 
 In this example, we are pulling data for Carlos Correa from 4/6 through 4/15/2016:
 
@@ -364,6 +436,43 @@ In this example, we are pulling data for Carlos Correa from 4/6 through 4/15/201
 29 2016-04-06 Carlos Correa             189    105.20      0.11
 30 2016-04-06 Carlos Correa             462    113.55     23.76
 31 2016-04-06 Carlos Correa             228    113.39     -2.18
+```
+
+With the `scrape_statcast_savant` function you can query however you'd like:
+
+```r
+>head(scrape_statcast_savant(start_date = "2016-04-06", end_date = "2016-04-15", playerid = 592789, player_type='pitcher'))
+ pitch_type  game_date release_speed release_pos_x release_pos_z
+1         FF 2016-04-12          97.3       -0.6733        6.4372
+2         FF 2016-04-12          97.8       -0.6366        6.4466
+3         FF 2016-04-12          97.6       -0.4936        6.4440
+4         FF 2016-04-12          97.0       -0.6884        6.5753
+5         SL 2016-04-12          91.6       -0.7873        6.4002
+6         CH 2016-04-12          88.9       -1.0913        6.2130
+       player_name batter pitcher    events          description spin_dir
+1 Noah Syndergaard 400085  592789    single        hit_into_play       NA
+2 Noah Syndergaard 400085  592789      <NA>        called_strike       NA
+3 Noah Syndergaard 425772  592789 field_out        hit_into_play       NA
+4 Noah Syndergaard 425772  592789      <NA>        called_strike       NA
+5 Noah Syndergaard 588751  592789 field_out        hit_into_play       NA
+6 Noah Syndergaard 518618  592789    double hit_into_play_no_out       NA 
+```
+```r
+>head(scrape_statcast_savant(start_date = "2016-04-06", end_date = "2016-04-06"))
+  pitch_type  game_date release_speed release_pos_x release_pos_z     player_name batter pitcher
+1         FT 2016-04-06          91.2       -1.9089        6.4077  Jake Marisnick 545350  467100
+2         CU 2016-04-06          77.7       -1.7753        6.7376   Carlos Correa 621043  467100
+3         CU 2016-04-06          80.3       -1.5339        6.6463   Carlos Correa 621043  467100
+4         SL 2016-04-06          84.7       -1.7689        6.4903   Carlos Correa 621043  467100
+5         FT 2016-04-06          90.8       -1.8843        6.4235   Carlos Correa 621043  467100
+6         FT 2016-04-06          90.2       -1.7467        6.5141 George Springer 543807  467100
+     events             description spin_dir spin_rate_deprecated break_angle_deprecated
+1 field_out           hit_into_play       NA                   NA                     NA
+2 strikeout swinging_strike_blocked       NA                   NA                     NA
+3      <NA>                    ball       NA                   NA                     NA
+4      <NA>           called_strike       NA                   NA                     NA
+5      <NA>           called_strike       NA                   NA                     NA
+6      walk                    ball       NA                   NA                     NA
 ```
 
 Since the savant functions require users to pass a valid MLBAMID, a lookup function is included that leverages the [Chadwich Bureau Register](https://github.com/chadwickbureau/register). Users provide a text string and only those players with that string present in their last name will be returned.
