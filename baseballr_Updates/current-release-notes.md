@@ -6,7 +6,7 @@ tags: rstats, baseballr
 
 ## April 9, 2018
 
-The latest release of the [`baseballr`](https://billpetti.github.io/baseballr/) package for `R` (0.4.1) includes a number of enhancements and bug fixes.
+The latest release of the [`baseballr`](https://billpetti.github.io/baseballr/) package for `R` (0.4) includes a number of enhancements and bug fixes.
 
 There are now two functions that allow users to scrape player game logs from FanGraphs:
 
