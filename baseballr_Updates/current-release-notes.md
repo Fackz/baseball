@@ -76,6 +76,7 @@ Both functions has two arguments:  `player_id` and `year`. Both will return deta
 5 Noah Syndergaard 588751  592789 field_out        hit_into_play       NA
 6 Noah Syndergaard 518618  592789    double hit_into_play_no_out       NA 
 ```
+```r
 >head(scrape_statcast_savant(start_date = "2016-04-06", end_date = "2016-04-06"))
   pitch_type  game_date release_speed release_pos_x release_pos_z     player_name batter pitcher
 1         FT 2016-04-06          91.2       -1.9089        6.4077  Jake Marisnick 545350  467100
