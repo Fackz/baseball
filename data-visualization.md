@@ -6,7 +6,7 @@ subtitle:
 
 ### Standings
 
-`viz_gb_on_period` was contributed by [Daniel H](https://github.com/darh78) and allows a user to generate a time series of standings for a division and automatically visualize the data in an interactive chart.
+`viz_gb_on_period` allows a user to generate a time series of standings for a division and automatically visualize the data in an interactive chart.
 
 ```r
 > viz_gb_on_period("2018-03-29", "2018-04-05", "NL East")
@@ -26,7 +26,7 @@ subtitle:
 10 NL East 2018-04-05 MIA       2     5 0.286 3.50 
 ```
 
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/vz_gb_chart_ex.png?raw=true "vz_gb ex")
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/vz_gb_chart_ex.png?raw=true "vz_gb ex")
 
 ### Spray Charts
 
@@ -44,7 +44,7 @@ ggspraychart(data, point_alpha = .6, fill_legend_title = "Hit Type", fill_value 
   ggtitle("\nJose Altuve") +
   labs(subtitle = "Spray Charts Since 2013\n")
 ```
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_ex.png?raw=true "facet ex")
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/altuve_facet_ex.png?raw=true "facet ex")
 
 ```r
 ggspraychart(data, point_alpha = .2, density = TRUE, bin_size = 30) + 
@@ -52,7 +52,7 @@ ggspraychart(data, point_alpha = .2, density = TRUE, bin_size = 30) +
   ggtitle("\nJose Altuve") +
   labs(subtitle = "Spray Charts Since 2013\n")
 ```
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_density.png?raw=true "density ex")
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/altuve_facet_density.png?raw=true "density ex")
 	
 The function is also written in such a way where it can be combined with `gganimate` to create animated plots:
 
@@ -69,6 +69,6 @@ p <- ggspraychart(data, density = TRUE, point_alpha = .2, bin_size = 30, frame =
 gganimate(p, ani.width=800, ani.height=800)
 ```
 
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/Altuve_evolution.gif?raw=true "gif e example") 
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/Altuve_evolution.gif?raw=true "gif e example") 
 	
 Be sure whatever variable you assign to the `frame` argument is a factor and the levels are in the desired order for the animation.
