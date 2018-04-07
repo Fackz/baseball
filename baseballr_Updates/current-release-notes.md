@@ -55,7 +55,7 @@ Both functions has two arguments:  `player_id` and `year`. Both will return deta
 10 NL East 2018-04-05 MIA       2     5 0.286 3.50 
 ```
 
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/vz_gb_chart_ex.png "vz_gb ex")
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/vz_gb_chart_ex.png?raw=true "vz_gb ex")
 
 [Ben Dilday](https://github.com/bdilday) combined the various `scrape_statcast_savant` functions I previously released intro a single function. The single function can pull all data over a given date range for all pitchers or batters or just for specific pitchers or batters.
 
@@ -110,7 +110,7 @@ ggspraychart(data, point_alpha = .6, fill_legend_title = "Hit Type", fill_value 
   ggtitle("\nJose Altuve") +
   labs(subtitle = "Spray Charts Since 2013\n")
 ```
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_ex.png "facet ex")
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_ex.png?raw=true "facet ex")
 
 ```r
 ggspraychart(data, point_alpha = .2, density = TRUE, bin_size = 30) + 
@@ -118,7 +118,7 @@ ggspraychart(data, point_alpha = .2, density = TRUE, bin_size = 30) +
   ggtitle("\nJose Altuve") +
   labs(subtitle = "Spray Charts Since 2013\n")
 ```
-![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_density.png "density ex")
+![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_density.png?raw=true "density ex")
 	
 The function is also written in such a way where it can be combined with `gganimate` to create animated plots:
 
