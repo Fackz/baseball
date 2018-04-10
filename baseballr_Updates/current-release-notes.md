@@ -100,10 +100,10 @@ Finally, I've added a function for generating spray charts based on my [Interact
 
 Keep in mind that the `hc_y` coordinate provided by baseballsavant needs to be inverted in order to properly plot the data. (I typically create a variable, `hc_y_rotated` by multiplying `hc_y` and use that for plotting.)
 
-Here's are point and density examples using data for Jose Altuve:
+Here are point and density examples using data for Jose Altuve:
 
 ```r
-ggspraychart(data, point_alpha = .6, fill_legend_title = "Hit Type", fill_value = "hit_type", 
+ggspraychart(data, x = hc_x, y = hc_y_rotated, point_alpha = .6, fill_legend_title = "Hit Type", fill_value = "hit_type", 
                fill_palette = c("1"="#A2C8EC", "2"="#006BA4", "3"="#FF940E",
                                 "Out"="#595959", "4"="#C85200")) + 
   facet_wrap(~game_year, nrow = 2) +
@@ -113,7 +113,7 @@ ggspraychart(data, point_alpha = .6, fill_legend_title = "Hit Type", fill_value 
 ![alt text](https://github.com/BillPetti/baseballr/blob/gh-pages/baseballr_Updates/altuve_facet_ex.png?raw=true "facet ex")
 
 ```r
-ggspraychart(data, point_alpha = .2, density = TRUE, bin_size = 30) + 
+ggspraychart(data, x = hc_x, y = hc_y_rotated, point_alpha = .2, density = TRUE, bin_size = 30) + 
   facet_wrap(~game_year, nrow = 2) +
   ggtitle("\nJose Altuve") +
   labs(subtitle = "Spray Charts Since 2013\n")
@@ -127,7 +127,7 @@ require(gganimate)
 
 years <- c(2013, 2014, 2015, 2016, 2017)
 
-p <- ggspraychart(data, density = TRUE, point_alpha = .2, bin_size = 30, frame = "game_year") + 
+p <- ggspraychart(data, x = hc_x, y = hc_y_rotated, density = TRUE, point_alpha = .2, bin_size = 30, frame = "game_year") + 
   ggtitle("\n\n Jose Altuve's Evolution by Year:") +
   labs(caption = "@BillPetti\nData source: baseballsavant.com\nBuilt with the baseballr package\n") +
   theme(plot.caption = element_text(face = "bold", size = 14))
