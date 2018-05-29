@@ -169,13 +169,13 @@ For overall park factors, use the `fg_park()` function, supplying the year you a
 
 ```r
 > head(fg_park(1986))
-  season home_team basic single double triple  hr  so UIBB GB FB LD IFFB FIP
-1   1986    Angels    98     99     92     81 105 100   99 NA NA NA   NA 101
-2   1986   Orioles    98     99     97     75 103 102  102 NA NA NA   NA 101
-3   1986   Red Sox   103    102    112    105  98 101   99 NA NA NA   NA  98
-4   1986 White Sox   103    100    102    122  97 100  106 NA NA NA   NA 100
-5   1986   Indians   101    104     98     95  99  97   99 NA NA NA   NA 100
-6   1986    Tigers    97     97     91     90 105 100   98 NA NA NA   NA 101
+  season home_team basic_5yr 3yr 1yr single double triple  hr  so UIBB GB FB LD IFFB FIP
+1   1986    Angels        98  98  95     99     92     81 105 100   99 NA NA NA   NA 101
+2   1986   Orioles        98  99  99     99     97     75 103 102  102 NA NA NA   NA 101
+3   1986   Red Sox       103 100  99    102    112    105  98 101   99 NA NA NA   NA  98
+4   1986 White Sox       103 103 101    100    102    122  97 100  106 NA NA NA   NA 100
+5   1986   Indians       101 100  99    104     98     95  99  97   99 NA NA NA   NA 100
+6   1986    Tigers        97  98  95     97     91     90 105 100   98 NA NA NA   NA 101
 ```
 For park factors by batter handedness, use the `fg_park_hand()` function. Note that handedness park factors are only available going back to the 2002 season:
 
