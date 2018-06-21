@@ -5,7 +5,7 @@ tags: rstats, baseballr
 ---
 ## May 29, 2018
 
-The latest release of the [`baseballr`](https://billpetti.github.io/baseballr/) package for `R` (0.5) includes a number of enhancements and bug fixes.
+The latest release of the [`baseballr`](https://billpetti.github.io/baseballr/) package for `R` (0.3.4) includes a number of enhancements and bug fixes.
 
 ## New Functions
 
