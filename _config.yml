@@ -31,7 +31,7 @@ navbar-links:
     - Data Visualization Functions: "http://billpetti.github.io/baseballr/data-visualization/"
     - Metric Coding and Calculation: "http://billpetti.github.io/baseballr/metric-coding-calculation/"
   Baseball Tools: 
-    Baseball Tools Home: "https://billpetti.github.io/baseball_tools_home/"
+    - Baseball Tools Home: "https://billpetti.github.io/baseball_tools_home/"
     - baseballr package for R: "https://billpetti.github.io/baseballr/"
     - Interactive Spray Chart Tool: "https://billpetti.shinyapps.io/shiny_spraychart"
     - Edge% Shiny App: "https://billpetti.shinyapps.io/edge_shiny/"
