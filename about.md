@@ -4,8 +4,8 @@ title: About
 subtitle: 
 ---
 
-# baseballr 0.3.4 <br>
-**(latest version released 2018-05-29)**
+# baseballr 0.4 <br>
+**(latest version released 2019-03-18)**
 
 `baseballr` is a package written for R focused on baseball analysis. It includes functions for scraping various data from websites, such as FanGraphs.com, Baseball-Reference.com, and baseballsavant.com. It also includes functions for calculating metrics, such as wOBA, FIP, and team-level consistency over custom time frames.
 
